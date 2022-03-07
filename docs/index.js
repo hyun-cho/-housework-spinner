@@ -53,5 +53,9 @@ const order = ['Mi', 'Joo', 'Jong']
     `
   }
 
-    root.innerHTML = createSpinner();
+  root.innerHTML = createSpinner();
+
+  console.log(root);
+  return;
+  
 })()
