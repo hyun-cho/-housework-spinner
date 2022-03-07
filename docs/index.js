@@ -30,13 +30,27 @@ Date.prototype.getWeek = function (dowOffset) {
   return weeknum;
 };
 
+const housework = ['청소', '설거지', '빨래'];
+const order = ['Mi', 'Joo', 'Jong']
+
 (() => {
   const date = new Date();
   const createSpinner = () => {
-    const week = date.getWeek();
+    let tick = date.getWeek() % 3;
 
+    const houseworkOrder = order.map((o, index) => {
+      return {
+        name: o,
+        housework: housework[index + tick >= 3 ? index + tick - 3 : index + tick]
+      }
+    })
+    
 
-    return `<div>${week}</div>`
+    return `
+    <div>${houseworkOrder[0].name}: ${houseworkOrder[0].housework}</div>
+    <div>${houseworkOrder[1].name}: ${houseworkOrder[1].housework}</div>
+    <div>${houseworkOrder[2].name}: ${houseworkOrder[2].housework}</div>
+    `
   }
 
     root.innerHTML = createSpinner();
