@@ -34,7 +34,7 @@
     };
 
     var housework = ['청소', '설거지', '빨래'];
-    var order = ['Mi', 'Joo', 'Jong'];
+    var order = ['대빵', '중빵', '소빵'];
 
     (() => {
       var date = new Date();
@@ -50,9 +50,9 @@
         
 
         return `
-        <div>${houseworkOrder[0].name}: ${houseworkOrder[0].housework}</div>
-        <div>${houseworkOrder[1].name}: ${houseworkOrder[1].housework}</div>
-        <div>${houseworkOrder[2].name}: ${houseworkOrder[2].housework}</div>
+        ${houseworkOrder[0].name}: ${houseworkOrder[0].housework}
+        ${houseworkOrder[1].name}: ${houseworkOrder[1].housework}
+        ${houseworkOrder[2].name}: ${houseworkOrder[2].housework}
         `;
       };
 
