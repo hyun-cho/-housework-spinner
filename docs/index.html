@@ -3,7 +3,7 @@
 <body>
   <div id="root"></div>
   <script>
-    const root = document.getElementById('root');
+    var root = document.getElementById('root');
 
     Date.prototype.getWeek = function (dowOffset) {
       /*getWeek() was developed by Nick Baicoianu at MeanFreePath: http://www.meanfreepath.com */
@@ -33,35 +33,35 @@
       return weeknum;
     };
 
-    const housework = ['청소', '설거지', '빨래'];
-    const order = ['Mi', 'Joo', 'Jong']
+    var housework = ['청소', '설거지', '빨래'];
+    var order = ['Mi', 'Joo', 'Jong'];
 
     (() => {
-      const date = new Date();
-      const createSpinner = () => {
-        let tick = date.getWeek() % 3;
+      var date = new Date();
+      var createSpinner = () => {
+        var tick = date.getWeek() % 3;
 
-        const houseworkOrder = order.map((o, index) => {
+        var houseworkOrder = order.map((o, index) => {
           return {
             name: o,
             housework: housework[index + tick >= 3 ? index + tick - 3 : index + tick]
-          }
-        })
+          };
+        });
         
 
         return `
         <div>${houseworkOrder[0].name}: ${houseworkOrder[0].housework}</div>
         <div>${houseworkOrder[1].name}: ${houseworkOrder[1].housework}</div>
         <div>${houseworkOrder[2].name}: ${houseworkOrder[2].housework}</div>
-        `
-      }
+        `;
+      };
 
-      root.innerHTML = createSpinner();
+      root.innerText = createSpinner();
 
       console.log(root);
       return;
       
-    })()
+    })();
   </script>
 </body>
 </html>
