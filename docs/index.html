@@ -56,13 +56,13 @@
       return weeknum;
     };
 
-    var housework = ['청소', '설거지', '빨래'];
-    var order = ['🦄', '😈', '👽'];
+    var housework = ['✨청소', '🍽설거지', '🧦빨래'];
+    var order = ['🦄', '🐳', '🦨'];
 
     (() => {
       var date = new Date();
       var createSpinner = () => {
-        var week = date.getWeek();
+        var week = date.getWeek(1);
         var tick = week % 3;
 
         var houseworkOrder = order.map((o, index) => {
