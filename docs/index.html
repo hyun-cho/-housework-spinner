@@ -3,15 +3,30 @@
 <head>
   <style id="asdf">
     div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       font-size: 43px;
       font-weight: bold;
+    }
+
+    #target {
+      padding: 15px;
+      border-radius: 10px;
+
+      background-color: aquamarine;
     }
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div id="target"></div>
+  </div>
   <script>
-    var root = document.getElementById('root');
+    var root = document.getElementById('target');
 
     Date.prototype.getWeek = function (dowOffset) {
       /*getWeek() was developed by Nick Baicoianu at MeanFreePath: http://www.meanfreepath.com */
